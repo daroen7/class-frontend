@@ -15,9 +15,9 @@ import routerProvider, {
   DocumentTitleHandler,
 } from "@refinedev/react-router";
 import { dataProvider } from "./providers/data";
-import { Login } from "./pages/login";
-import { Register } from "./pages/register";
-import { ForgotPassword } from "./pages/forgot-password";
+// import { Login } from "./pages/login";
+// import { Register } from "./pages/register";
+// import { ForgotPassword } from "./pages/forgot-password";
 import { ErrorComponent } from "./components/refine-ui/layout/error-component";
 import { Layout } from "./components/refine-ui/layout/layout";
 import { Header } from "./components/refine-ui/layout/header";
@@ -38,6 +38,7 @@ function App() {
           <DevtoolsProvider>
             <Refine
               dataProvider={dataProvider}
+              // dataProvider={dataProvider('https://api.fake-rest.refine.dev')}
               notificationProvider={useNotificationProvider()}
               routerProvider={routerProvider}
               options={{
@@ -73,7 +74,6 @@ function App() {
                     <Route index element={<SubjectsList />}/>
                     <Route path="create" element={<SubjectsCreate />}/>
                   </Route>
-
                 </Route>
               </Routes>
               <Toaster />
